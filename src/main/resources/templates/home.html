@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre>
+    $!{value1}
+    ${value2}
+    $!{value3}
+
+    colors:$!{colors}
+
+    #foreach($color in $colors)
+        this is Color$!{foreach.index}:$color,$!{foreach.count}
+    #end
+
+    #foreach($key in $map.keySet())
+        Number:$key,Value:$map.get($key)
+    #end
+
+    #foreach($kv in $map.entrySet())
+        Number:$kv.key,Value:$kv.value
+    #end
+
+    user name is : $user.getName()
+    $user.description()
+
+    #set($title="nowcoder")
+    Title:$!{title}
+
+    Parse: #parse("header.html")
+    Include: #include("header.html")
+
+    #macro(render_color,$index,$color)
+        Color Render Macro $index, $color
+    #end
+
+    #foreach($color in $colors)
+        #render_color($foreach.index,$color)
+    #end
+
+    #set($hello = "hello")
+    #set($helloworld1="$!{hello} world")
+
+    hello : $hello
+    helloworld1: $helloworld1
+</pre>
+</body>
+</html>
