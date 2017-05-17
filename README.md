@@ -1,1 +1,2 @@
 # ReviewUtils
+RedisAdapter 
