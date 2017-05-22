@@ -7,9 +7,7 @@ import org.springframework.web.util.HtmlUtils;
 
 import java.util.List;
 
-/**
- * Created by lenovo on 2017/4/29.
- */
+
 public class CommentService {
 
     @Autowired
@@ -32,5 +30,9 @@ public class CommentService {
 
     public boolean deleteComment(int commentId) {
         return commentDAO.updateStatus(commentId , 1) > 0;
+    }
+
+    public Comment getCommentById(int id) {
+        return commentDAO.getCommentById(id);
     }
 }

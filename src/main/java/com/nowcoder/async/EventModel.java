@@ -12,10 +12,17 @@ public class EventModel {
 
     private Map<String , String> exts = new HashMap<>();
 
+    /**
+     *因为返回EventModel所以return this 可以把setExt方法返回值传给EventModel
+     * @param key
+     * @param value
+     * @return
+     */
     public EventModel setExt(String key , String value) {
         exts.put(key , value);
         return this;
     }
+
 
     public String getExt(String key) {
         return exts.get(key);
@@ -28,6 +35,14 @@ public class EventModel {
     public EventModel setType(EventType type) {
         this.type = type;
         return this;
+    }
+
+
+    /**
+     * default constructor
+     */
+    public EventModel() {
+
     }
 
     public int getActorId() {
@@ -59,6 +74,10 @@ public class EventModel {
 
     public int getEntityOwnerId() {
         return entityOwnerId;
+    }
+
+    public EventModel (EventType type){
+        this.type = type;
     }
 
     public EventModel setEntityOwnerId(int entityOwnerId) {
